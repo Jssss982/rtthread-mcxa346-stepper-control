@@ -93,6 +93,6 @@ python -m unittest discover -s frdm-mcxa346-stepper-rtthread/host -p 'test_*.py'
 
 ## 来源和许可
 
-项目应用、上位机及项目脚本以Apache-2.0发布；第三方源码保留原版权和各自许可证，详见 [THIRD_PARTY_NOTICES.txt](THIRD_PARTY_NOTICES.txt)。参考RT-Thread官方BSP、NXP资料和WHEELTEC配套说明，使用AI辅助开发、排障、测试及文档整理。
+项目应用、上位机及项目脚本以Apache-2.0发布；第三方源码保留原版权和各自许可证，详见 [THIRD_PARTY_NOTICES.txt](THIRD_PARTY_NOTICES.txt)。参考RT-Thread官方BSP、NXP资料和WHEELTEC配套说明。
 
 厂商教学视频、手册、原板固件备份和本机凭据不在此仓库中。

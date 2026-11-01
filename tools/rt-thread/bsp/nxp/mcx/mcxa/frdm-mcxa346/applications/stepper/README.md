@@ -111,7 +111,7 @@ Windows：tools/build-stepper.ps1，默认使用 PATH 中的 Python，使用 -Py
 - [NXP UM12348](https://www.nxp.com/docs/en/user-manual/UM12348.pdf)，Rev 1.1 第 26 页图 13。
 - 用户提供的 WHEELTEC MS42CG使用手册-20260714.pdf、步进电机驱动.pdf；仅本地参考，不随源码重新分发。
 
-基于官方 BSP、NXP SDK 和工作区已有应用框架，使用 AI 辅助修改、测试、排障及文档整理；上游依赖保留各自版权和许可证。公开视频、源码地址、论坛发帖和作品登记须另行完成，实机调通本身不等于赛事提交完成。
+基于官方 BSP、NXP SDK 和工作区已有应用框架；上游依赖保留各自版权和许可证。源码与上位机已发布至 https://github.com/Jssss982/rtthread-mcxa346-stepper-control 。公开视频、论坛发帖和作品登记须另行完成。
 
 ## 桌面上位机
 
