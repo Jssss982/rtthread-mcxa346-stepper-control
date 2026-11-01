@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+output/
+**/build/
+**/.sconsign*
+*.o
+*.elf
+*.bin
+*.map
+*.exe
+*.log
+.DS_Store

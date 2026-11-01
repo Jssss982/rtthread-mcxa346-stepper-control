@@ -1,0 +1,14 @@
+{
+  "rt_thread_commit": "cbc19778d0ae5ef2533a28c0f62c6a399858010a",
+  "archives": {
+    "nxp-mcx-cmsis.tar.gz": "05d99c5aac027ee7c1299ba843c621482d4e84a124487af8abcc2416a5eb685f",
+    "nxp-mcx-series.tar.gz": "66d05aebdee6b4e21b4e2675e88fab8e77cdc09369f5e6f3dba40e45f713f596"
+  },
+  "firmware": {
+    "rtthread.bin": "fe0b4e884ecdfc70f61b9035d49d0c294f868c3cf5a4ef319ed2edda5e2708ac",
+    "rtthread.elf": "888eb0e585ece046e5508ef394dd0996fe77698b3d62131cdfa53f2c93059d34",
+    "rtthread.map": "e6654a544f217cedfded09ca3d6c56e7cb47f5a744f553e9e278f14cd8464154"
+  },
+  "source_zip_sha256": "d801514c2eced723247f5710b7299c2509fc8d83b0eaaaa6bafbea527acab1d5",
+  "source_archive_note": "SHA-256 of the original verified offline source package used to stage this repository. Repository launch/build defaults are made portable."
+}

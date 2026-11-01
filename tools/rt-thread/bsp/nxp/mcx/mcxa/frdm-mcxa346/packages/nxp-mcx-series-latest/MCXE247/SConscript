@@ -1,0 +1,68 @@
+Import('rtconfig')
+from building import *
+
+cwd = GetCurrentDir()
+path = [cwd + '/', cwd + '/drivers', cwd + '/periph0']
+src = Split('''
+            system_MCXE247.c
+            ''')
+
+if rtconfig.PLATFORM in ['gcc']:
+    src += ['gcc/startup_MCXE247.S']
+elif rtconfig.PLATFORM in ['armcc', 'armclang']:
+    src += ['arm/startup_MCXE247.S']
+elif rtconfig.PLATFORM in ['iccarm']:
+    src += ['iar/startup_MCXE247.s']
+
+src += ['drivers/ela_csec_driver.c']
+src += ['drivers/ela_csec_hw_access.c']
+src += ['drivers/fsl_acmp.c']
+src += ['drivers/fsl_adc12.c']
+src += ['drivers/fsl_clock.c']
+src += ['drivers/fsl_common_arm.c']
+src += ['drivers/fsl_common.c']
+src += ['drivers/fsl_crc.c']
+src += ['drivers/fsl_dmamux.c']
+src += ['drivers/fsl_edma.c']
+src += ['drivers/fsl_enet.c']
+src += ['drivers/fsl_ewm.c']
+src += ['drivers/fsl_flexcan.c']
+src += ['drivers/fsl_flexcan_edma.c']
+src += ['drivers/fsl_flexcan_soc.c']
+src += ['drivers/fsl_flexio.c']
+src += ['drivers/fsl_flexio_i2c_master.c']
+src += ['drivers/fsl_flexio_spi.c']
+src += ['drivers/fsl_flexio_spi_edma.c']
+src += ['drivers/fsl_flexio_uart.c']
+src += ['drivers/fsl_flexio_uart_edma.c']
+src += ['drivers/fsl_ftfx_cache.c']
+src += ['drivers/fsl_ftfx_controller.c']
+src += ['drivers/fsl_ftfx_flash.c']
+src += ['drivers/fsl_ftfx_flexnvm.c']
+src += ['drivers/fsl_ftm.c']
+src += ['drivers/fsl_gpio.c']
+src += ['drivers/fsl_lpi2c.c']
+src += ['drivers/fsl_lpi2c_edma.c']
+src += ['drivers/fsl_lpit.c']
+src += ['drivers/fsl_lpspi.c']
+src += ['drivers/fsl_lpspi_edma.c']
+src += ['drivers/fsl_lptmr.c']
+src += ['drivers/fsl_lpuart.c']
+src += ['drivers/fsl_lpuart_edma.c']
+src += ['drivers/fsl_pdb.c']
+src += ['drivers/fsl_pmc.c']
+src += ['drivers/fsl_qspi.c']
+src += ['drivers/fsl_qspi_edma.c']
+src += ['drivers/fsl_qspi_soc.c']
+src += ['drivers/fsl_rcm.c']
+src += ['drivers/fsl_rtc.c']
+src += ['drivers/fsl_sim.c']
+src += ['drivers/fsl_smc.c']
+src += ['drivers/fsl_sysmpu.c']
+src += ['drivers/fsl_trgmux.c']
+src += ['drivers/fsl_wdog32.c']
+src += ['drivers/lmem/fsl_cache.c']
+
+group = DefineGroup('Libraries', src, depend = [''], CPPPATH = path)
+
+Return('group')

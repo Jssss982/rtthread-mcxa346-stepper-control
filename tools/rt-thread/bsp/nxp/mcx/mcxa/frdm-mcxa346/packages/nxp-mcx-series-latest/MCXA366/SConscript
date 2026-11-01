@@ -1,0 +1,50 @@
+Import('rtconfig')
+from building import *
+
+cwd = GetCurrentDir()
+path = [cwd + '/components/codec', cwd + '/', cwd + '/drivers', cwd + '/periph2']
+src = Split('''
+            system_MCXA366.c
+            startup_MCXA366.c
+            ''')
+
+src += ['drivers/fsl_aoi.c']
+src += ['drivers/fsl_clock.c']
+src += ['drivers/fsl_cmc.c']
+src += ['drivers/fsl_common.c']
+src += ['drivers/fsl_common_arm.c']
+src += ['drivers/fsl_crc.c']
+src += ['drivers/fsl_ctimer.c']
+src += ['drivers/fsl_edma.c']
+src += ['drivers/fsl_edma_soc.c']
+src += ['drivers/fsl_eim.c']
+src += ['drivers/fsl_eqdc.c']
+src += ['drivers/fsl_erm.c']
+src += ['drivers/fsl_freqme.c']
+src += ['drivers/fsl_glikey.c']
+src += ['drivers/fsl_gpio.c']
+src += ['drivers/fsl_inputmux.c']
+src += ['drivers/fsl_lpadc.c']
+src += ['drivers/fsl_lpcmp.c']
+src += ['drivers/fsl_lpi2c.c']
+src += ['drivers/fsl_lpi2c_edma.c']
+src += ['drivers/fsl_lptmr.c']
+src += ['drivers/fsl_lpuart.c']
+src += ['drivers/fsl_lpuart_edma.c']
+src += ['drivers/fsl_lpspi.c']
+src += ['drivers/fsl_lpspi_edma.c']
+src += ['drivers/fsl_ostimer.c']
+src += ['drivers/fsl_pwm.c']
+src += ['drivers/fsl_reset.c']
+src += ['drivers/fsl_spc.c']
+src += ['drivers/fsl_utick.c']
+src += ['drivers/fsl_vbat.c']
+src += ['drivers/fsl_waketimer.c']
+src += ['drivers/fsl_wuu.c']
+src += ['drivers/fsl_wwdt.c']
+src += ['drivers/fsl_flexcan.c']
+src += ['drivers/fsl_flexcan_edma.c']
+src += ['drivers/fsl_slcd.c']
+group = DefineGroup('Libraries', src, depend = [''], CPPPATH = path)
+
+Return('group')

@@ -1,0 +1,14 @@
+from building import *
+
+cwd = GetCurrentDir()
+src = Glob('src/*.c')
+CPPPATH = [cwd + '/inc']
+
+group = DefineGroup(
+    'Applications',
+    src,
+    depend=['RT_USING_PIN'],
+    CPPPATH=CPPPATH
+)
+
+Return('group')

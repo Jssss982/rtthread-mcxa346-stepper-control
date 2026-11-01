@@ -1,0 +1,8 @@
+from building import *
+
+objs = []
+
+objs += SConscript('nxp-mcx-cmsis-latest/SConscript')
+objs += SConscript('nxp-mcx-series-latest/SConscript')
+
+Return('objs')

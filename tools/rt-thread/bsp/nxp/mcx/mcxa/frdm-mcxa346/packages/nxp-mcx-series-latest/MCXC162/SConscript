@@ -1,0 +1,46 @@
+Import('rtconfig')
+from building import *
+
+cwd = GetCurrentDir()
+path = [cwd + '/', cwd + '/drivers', cwd + '/periph3']
+src = Split('''
+            system_MCXC162.c
+            startup_MCXC162.c
+            drivers/fsl_clock.c
+            drivers/fsl_common.c
+            drivers/fsl_common_arm.c
+            drivers/fsl_reset.c
+            drivers/fsl_spc.c
+            ''')
+
+if GetDepend('BSP_USING_PIN'):
+    src += ['drivers/fsl_gpio.c']
+
+if GetDepend('BSP_USING_UART'):
+    src += ['drivers/fsl_lpuart.c']
+
+if GetDepend('BSP_USING_I2C'):
+    src += ['drivers/fsl_lpi2c.c']
+
+if GetDepend('BSP_USING_SPI'):
+    src += ['drivers/fsl_lpspi.c']
+
+if GetDepend('BSP_USING_RTC'):
+    src += ['drivers/fsl_rtc.c']
+
+if GetDepend('BSP_USING_WDT'):
+    src += ['drivers/fsl_wwdt.c']
+
+if GetDepend('BSP_USING_CLOCK_TIMER'):
+    src += ['drivers/fsl_ctimer.c']
+
+if GetDepend('BSP_USING_PWM'):
+    src += ['drivers/fsl_pwm.c']
+
+defines = []
+if rtconfig.PLATFORM == 'gcc':
+    defines = ['__START=entry', '__STARTUP_CLEAR_BSS']
+
+group = DefineGroup('Libraries', src, depend=[''], CPPPATH=path, CPPDEFINES=defines)
+
+Return('group')

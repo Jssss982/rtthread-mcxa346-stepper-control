@@ -1,0 +1,31 @@
+Project: RT-Thread MCXA346 stepper control and desktop monitor
+Project additions copyright 2026 Jssss982; licensed under Apache-2.0.
+
+RT-Thread snapshot:
+  https://github.com/RT-Thread/rt-thread
+  commit cbc19778d0ae5ef2533a28c0f62c6a399858010a
+  Selected build-required directories are included, not the entire upstream repository.
+  License: tools/rt-thread/LICENSE and per-component/per-file notices.
+
+NXP / Arm packages:
+  https://github.com/RT-Thread-packages/nxp-mcx-cmsis
+  https://github.com/RT-Thread-packages/nxp-mcx-series
+  Original package snapshots are identified by SHA-256 in dependency-lock.json.
+  CMSIS and NXP files retain their original Arm/NXP/Freescale copyright and SPDX notices.
+  Their individual licenses, including Apache-2.0 and BSD-3-Clause, continue to apply.
+
+Integration changes to the upstream BSP:
+  rtconfig.py: set GCC C startup to RT-Thread entry and clear BSS.
+  board/linker_scripts/MCXA346_flash.ld: retain FSymTab, VSymTab and init tables.
+  SConstruct: register the linker script dependency.
+  applications/stepper: project application; packages/SConscript: package integration.
+  tools/prepare-bsp.py reproduces the three GCC fixes.
+
+Other bundled components retain their own licenses and notices, including lwIP,
+CherryUSB, SFUD and filesystem components. The project license does not replace
+any third-party component license.
+
+Python runtime dependencies (pyserial, Tkinter/Python) and compiler executables
+are not bundled. WHEELTEC manuals and videos are references, not redistributed.
+
+BSD-3-Clause reference text is included in LICENSES/BSD-3-Clause.txt; applicable copyright holders and years remain those in each original file header.
